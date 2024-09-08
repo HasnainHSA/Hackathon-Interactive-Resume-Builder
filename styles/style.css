@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed from center to flex-start */
+    min-height: 100vh; /* Changed from height to min-height */
+    padding: 20px; /* Prevents content from sticking to the edges on small screens */
+}
+
+/* Container */
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Sections */
+.left-section, .right-section {
+    padding: 20px;
+}
+
+/* Left Section */
+.left-section {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Profile Picture */
+.profile-picture {
+    padding: 10px; /* Ensure content isn’t cut off */
+}
+
+.profile-picture img {
+    width: 100%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+
+/* Right Section */
+.right-section {
+    width: 100%;
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #FCD800;
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Lists */
+.contact-info ul,
+.skills ul,
+.interests ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.contact-info ul li,
+.skills ul li,
+.interests ul li {
+    margin-bottom: 10px;
+}
+
+/* Jobs */
+.job {
+    margin-bottom: 20px;
+}
+
+.job h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.job span {
+    color: #999;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Skills */
+.skills ul li {
+    margin-bottom: 20px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #49db90;
+    border-radius: 8px;
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+/* Interests */
+.interests ul li {
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #777;
+}
+
+/* Toggle Section */
+.toggle-section {
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    font-size: 1.4rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #49db90;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Hidden Sections */
+.hidden {
+    display: none;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    .left-section {
+        width: 30%;
+        text-align: left;
+    }
+    .right-section {
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-section, .right-section {
+        width: 100%;
+        /* text-align: center; */
+    }
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    .profile-picture img {
+        width: 80px; /* Further reduce for extra small screens */
+        height: 80px;
+    }
+    .switch {
+        width: 28px;
+        height: 16px;
+    }
+    .slider:before {
+        height: 10px;
+        width: 10px;
+        left: 3px;
+        bottom: 3px;
+    }
+}
